@@ -10,6 +10,7 @@ namespace News.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Message = "Hello";
             return View();
         }
 
@@ -26,5 +27,12 @@ namespace News.Controllers
 
             return View();
         }
+
+        public ActionResult Welcome()
+        {
+
+            return View();
+        }
+
     }
 }
