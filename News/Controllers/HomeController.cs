@@ -33,6 +33,20 @@ namespace News.Controllers
 
             return View();
         }
+/// <summary>
+/// 
+/// </summary>
+/// <returns></returns>
+        public ActionResult List()
+        {
+            String[] data = new string[] { "习近平会见蒙古人民党主席",
+                "今日推荐HOT歼20战机将以制空迷彩涂装亮相珠海航展",
+                "四川八旬夫妻因贫困隐居山洞54年：如今儿是工程师孙是博士",
+                "美科幻战舰将部署亚太 上将:要对付黑暗势力" };
+            ViewBag.Data = data;
+            return View();
+        }
+
 
     }
 }
