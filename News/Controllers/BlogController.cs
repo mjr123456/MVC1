@@ -20,7 +20,7 @@ namespace News.Controllers
             {
                 lst = lst.Where(o => o.Subject.Contains(q));
             }
-            ViewBag.BlogArticles = lst.OrderByDescending(o =>o.Id).ToList();
+            ViewBag.BlogArticles = lst.OrderByDescending(o => o.Id).ToList();
             ViewBag.q = q;
             return View();
         }
