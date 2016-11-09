@@ -16,12 +16,16 @@ namespace News.Controllers
             db.Database.CreateIfNotExists();
 
             var lst = db.BlogArticles.AsQueryable();
+
             if (!string.IsNullOrWhiteSpace(q))
             {
                 lst = lst.Where(o => o.Subject.Contains(q));
             }
+
+
             ViewBag.BlogArticles = lst.OrderByDescending(o => o.Id).ToList();
             ViewBag.q = q;
+
             return View();
         }
 
@@ -31,6 +35,7 @@ namespace News.Controllers
             return View();
         }
 
+        //public ActionResult ArticleSave(string subject, string body)
         public ActionResult ArticleSave(BlogArticle model)
         {
             if (ModelState.IsValid)
@@ -43,12 +48,11 @@ namespace News.Controllers
                 var db = new BlogDatabase();
                 db.BlogArticles.Add(article);
                 db.SaveChanges();
-               
             }
+
+
             return Redirect("Index");
         }
-          
-       
 
         public ActionResult Show(int id)
         {
